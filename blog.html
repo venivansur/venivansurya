@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="assets/css/blog.css"> <!-- Updated stylesheet link -->
+</head>
+
+<body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li>
+            <img src="assets/img/logo.png" style="height: 30px"/>
+          </li>
+
+
+     <li>
+          <a href="index.html" class="home"> Home </a>
+        </li>
+       
+        <li>
+          <a href="blog.html" class="project"> My Project </a>
+        </li>
+
+        <li style="display: flex; justify-content: flex-end; width: 80%">
+          <a href="contact.html" class="btn-orange">Contact Me</a>
+        </li>
+
+      </li>
+    </ul>
+        </nav>
+    <div class="container">
+        <!-- Form Section -->
+        <section class="form-section">
+            <h1>ADD MY PROJECT</h1>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Technologies</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="nodejs" value="Node Js"> Node Js
+                        <input type="checkbox" id="nextjs" value="Next Js"> Next Js
+                        <input type="checkbox" id="reactjs" value="React Js"> React Js
+                        <input type="checkbox" id="typescript" value="TypeScript"> TypeScript
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input type="file" id="image" accept="image/*" required>
+                    <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Projects Display Section -->
+        <section class="projects-section">
+            <h1>MY PROJECTS</h1>
+            <div id="projectsContainer" class="projects-container">
+                <!-- Projects will be added here dynamically -->
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/blog.js"></script>
+</body>
+</html>

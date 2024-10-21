@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    
+    <link rel="stylesheet" href="assets/css/contac.css" />
+  </head>
+  <body>
+
+<div>
+  <h1 class="judul">Get In Touch</h1>
+</div>
+
+
+
+    <div style="display: flex; justify-content: center; margin-top: 50px">
+      <form
+        onsubmit="sendToMail(event)"
+        style="display: flex; flex-direction: column; gap: 10px; width: 300px"
+      >
+        <div>
+          <label>Name</label>
+          <input id="input-name" />
+        </div>
+        <div>
+          <label>Email</label>
+          <input id="input-email" />
+        </div>
+        <div>
+          <label>Phone Number</label>
+          <input id="input-phone" />
+        </div>
+        <div>
+          <label>Subject</label>
+          <select id="input-subject">
+            <option value="Fullstack Developer">Fullstack Developer</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+          </select>
+        </div>
+        <div>
+          <label>Your message</label>
+          <textarea id="input-message"></textarea>
+        
+       <div class="but"><button class="btn-orange" >Submit</button>
+       </div>
+          
+       
+      </form>
+    </div>
+   </script> 
+    <script src="assets/js/contact.js"></script>
+    <a href="mailto${inputEmail}?subject=${inputSubject}&body=${inputMessege}"></a>
+    
+    </div>
+  </body>
+</html>

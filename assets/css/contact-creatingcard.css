@@ -1,0 +1,119 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.super-center-grid-container {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 193, 165);
+}
+
+.home {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.project {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-orange {
+  background-color: rgb(23, 21, 21);
+  padding: 10px;
+  color: rgb(243, 231, 231);
+  font-weight: bold;
+  font-size: medium;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar {
+  background-color: #bfad92;
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  align-items: center;
+}
+
+.me {
+  display: flex;
+  object-fit: cover;
+  display: flex;
+}
+
+.par {
+  display: grid;
+
+  width: 400px;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.super-center-grid {
+  display: flex;
+  
+  width: 700px;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cd {
+  display: flex;
+  gap: 1rem;
+}
+
+.cm {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.download-cv {
+  text-decoration: none;
+  color: black;
+}
+
+.gambar {
+  border: 1px transparent;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: black;
+}
+
+.foto {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 70vh;
+  text-align: center;
+
+  border: 1px transparent;
+  border-radius: 10px;
+}
+
+.abo {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
