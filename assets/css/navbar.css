@@ -70,3 +70,76 @@
     align-items: center;
     padding: 20px;
   }
+
+  nav ul {
+    margin: 0;
+    background-color: #f4f3f3;
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+  }
+  
+  .btn-orange {
+    background-color: orangered;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  
+  .hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 2rem;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .hamburger-container {
+    background-color: #f4f3f3;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .hamburger-active {
+    background-color: orangered;
+  }
+  
+  .hamburger-container-item {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+  }
+  
+  .hamburger-container-item a {
+    text-decoration: none;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .nav-link {
+      display: none;
+    }
+  
+    .hamburger-button {
+      display: block;
+    }
+  
+    nav ul {
+      justify-content: space-between;
+    }
+  
+    nav ul li:last-child {
+      width: auto;
+    }
+  }

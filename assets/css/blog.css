@@ -36,7 +36,7 @@ body {
   }
   
   .navbar {
-    background-color: #bfad92;
+    background-color: #f6f3ef;
     list-style-type: none;
     display: flex;
     gap: 15px;
@@ -70,7 +70,7 @@ h1 {
 }
 
 .form-section, .projects-section {
-    background-color: #a18262;
+    background-color: #f9f5f5;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -112,15 +112,15 @@ textarea {
 
 button {
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    background-color: #faf7f7;
+    color: rgb(27, 25, 25);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #f3e2e2;
 }
 
 .projects-container {

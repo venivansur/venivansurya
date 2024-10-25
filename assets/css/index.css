@@ -10,13 +10,20 @@ body {
 .super-center-grid-container {
  
  display: flex;
-background-color: #e6eef5
-
+background-color: #e6eef5;
+flex-direction: column;
   
 }
 
 
+.my-project
+{
+display: flex;
 
+
+
+
+}
 
 
 
@@ -26,22 +33,23 @@ background-color: #e6eef5
 
 .super-center-grid {
 display: flex;
+flex-direction: column;
 border: 1px;
 border-radius: 10px;
-
 padding: 20px;
 margin:  20px;
 background-color: whitesmoke;
 box-shadow: 30px;
-
-
-
+gap: 1rem;
+justify-content: center;
+align-items: center;
 }
 
   
 .all-contain{
 display: flex;
-flex-direction: column;
+justify-content: center;
+align-items: center;
 width: 50%;
 gap: 15px;
 }
@@ -68,9 +76,8 @@ text-align:justify
   background-color: black;
   padding: 2px;
   border-radius: 10px;
-  display: block;
  
-  justify-content: flex-end;
+
 
 }
 
@@ -113,20 +120,13 @@ gap: 10px;
 
 }
 
-
-
-
 .me{
 
 display: flex;
 flex-direction: column;
 
 }
-
-
-  
-      
-
+ 
 
 
 @media only screen and (max-width: 800px) {
@@ -138,30 +138,61 @@ flex-direction: column;
 }
 
 
-@media only screen and (max-width: 800px) {
-  .super-center-grid-container {
-.cd {
-  display: flex;
-  
-  gap: 1rem;
-     
-  }
-
-  }
-
-
-}
 
 @media only screen and (max-width: 800px) {
   .super-center-grid {
     display: flex;
-flex-direction: column;
+flex-direction: column;     
+
+
+}
+
+}
+ 
+
+@media only screen and (max-width: 800px) {
+  .cd {
+    display: block;
+   width: max-content;
+
       
+
+
+}
+
+}
+
+@media only screen and (max-width: 800px) {
+  .all-contain {
+    display: flex;
+    flex-direction: column;
+
+      
+
+
+}
+
+}
+
+
+
+
+
+
+      
+  
+
+
+
+  
+  @media only screen and (max-width: 800px) {
+   ul.navbar {
+      display: none;
+    }
+
+
+
   }
-
-
-
-    
 
 
 
@@ -171,7 +202,7 @@ flex-direction: column;
 
 
 
-  }
+  
 
 
 
