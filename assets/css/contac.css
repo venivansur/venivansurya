@@ -24,12 +24,13 @@ text-decoration: none;
 border-radius: 10px;
 font-size: 15px;
 width: 30%;
+display: block;
 
 }
-.but{
-    display: flex;
-justify-content: flex-end;
 
 
 
-}
+
+
+
+

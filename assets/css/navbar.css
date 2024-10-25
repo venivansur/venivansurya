@@ -1,0 +1,72 @@
+.home {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .project {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    
+    width: max-content;
+    
+
+  }
+  .contact{
+  text-decoration: none;
+  background-color: black;
+  border: 1px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  display: block;
+  }
+  
+  .testimonial{
+    
+    text-decoration: none;
+    color: black;
+
+
+    font-weight: bold;
+
+  
+  }
+
+  
+  .btn-orange {
+    background-color: rgb(23, 21, 21);
+    padding: 10px;
+    color: rgb(243, 231, 231);
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+  
+  }
+
+
+  .li-contact{
+    display: flex; 
+    width: 80%; 
+    justify-content: flex-end;
+  border: 1px;
+  align-items: center;
+  
+  
+  } 
+  
+  .navbar {
+
+  
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+
+    align-items: center;
+    padding: 20px;
+  }
