@@ -1,0 +1,132 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.super-center-grid-container {
+  display: flex;
+  background-color: #e6eef5;
+  flex-direction: column;
+}
+
+.my-project {
+  display: flex;
+}
+
+.super-center-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background-color: whitesmoke;
+  box-shadow: 30px;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 15px;
+}
+
+.par {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: justify;
+}
+
+.cd {
+  display: flex;
+
+  gap: 1rem;
+}
+
+.cm {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.download-cv {
+  text-decoration: none;
+  color: black;
+}
+
+.gambar {
+  border: 1px transparent;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 19px;
+}
+
+.abo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.foto {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.icon {
+  display: flex;
+  font-size: 30px;
+
+  gap: 10px;
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 800px) {
+  .super-center-grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .super-center-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cd {
+    display: block;
+    width: max-content;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .all-contain {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  ul.navbar {
+    display: none;
+  }
+}
