@@ -1,19 +1,12 @@
 const hbs = require("hbs");
 
 hbs.registerHelper("get_full_time", (date) => {
+  if (!(date instanceof Date)) {
+    return 'Invalid date'; 
+  }
+
   const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
   ];
 
   const tanggal = date.getDate();
@@ -31,13 +24,16 @@ hbs.registerHelper("get_full_time", (date) => {
     menit = "0" + menit;
   }
 
-  return `${tanggal} ${bulan} ${tahun} ${jam}:${menit} WIB`;
-})
+  return `${tanggal} ${bulan} ${tahun} `;
+});
 
 hbs.registerHelper("get_distance_time", (timePost) => {
-  const timeNow = new Date();
-  const distance = timeNow - timePost; // hasilnya miliseconds -> 1000ms = 1 detik
+  if (!(timePost instanceof Date)) {
+    return 'Invalid time'; //
+  }
 
+  const timeNow = new Date();
+  const distance = timeNow - timePost; // 
   const seconds = Math.floor(distance / 1000);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
@@ -52,15 +48,19 @@ hbs.registerHelper("get_distance_time", (timePost) => {
   } else if (day < 24) {
     return `${day} day ago`;
   }
+});
 
-})
+hbs.registerHelper("get_duration", (start, end) => {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
 
-hbs.registerHelper("get_duration",(start, end)  =>{
-    const startDate = new Date(start);
-    const endDate = new Date(end);
-    const duration = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24)); // in days
-    const months = Math.floor(duration / 30);
-    const days = duration % 30;
-    return `${months} month(s) and ${days} day(s)`; // Adjust to show months and days
-})
+  if (isNaN(startDate) || isNaN(endDate)) {
+    return 'Invalid date range'; // 
+  }
 
+  const duration = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24)); // in days
+  const months = Math.floor(duration / 30);
+  const days = duration % 30;
+
+  return `${months} month(s) and ${days} day(s)`; 
+});

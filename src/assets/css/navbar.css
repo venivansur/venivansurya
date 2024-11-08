@@ -1,145 +1,63 @@
-.home {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  
-  .project {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    display: flex;
-    
-    width: max-content;
-    
 
-  }
-  .contact{
+.home,
+.project,
+.testimonial {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+.contact
+.btn-link
+{
   text-decoration: none;
   background-color: black;
-  border: 1px;
   padding: 10px;
   color: white;
   font-weight: bold;
   border-radius: 10px;
   display: block;
-  }
-  
-  .testimonial{
-    
-    text-decoration: none;
-    color: black;
+}
+
+.btn-orange {
+  background-color: orangered;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+}
 
 
-    font-weight: bold;
-
-  
-  }
-
-  
-  .btn-orange {
-    background-color: rgb(23, 21, 21);
-    padding: 10px;
-    color: rgb(243, 231, 231);
-    font-weight: bold;
-    font-size: medium;
-    border-radius: 10px;
-    text-decoration: none;
-    display: flex;
-  
-  }
-
-
-  .li-contact{
-    display: flex; 
-    width: 80%; 
-    justify-content: flex-end;
-  border: 1px;
+.navbar {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
   align-items: center;
+  padding: 20px;
   
-  
-  } 
-  
-  .navbar {
 
-  
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
+}
 
-    align-items: center;
-    padding: 20px;
-  }
+.navbar a {
+  color: black;
+}
 
-  nav ul {
-    margin: 0;
-    background-color: #f4f3f3;
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    align-items: center;
-  }
-  
-  .btn-orange {
-    background-color: orangered;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    border-radius: 10px;
-    text-decoration: none;
-  }
-  
-  .hamburger-button {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 2rem;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  .hamburger-container {
-    background-color: #f4f3f3;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-  }
-  
-  .hamburger-active {
-    background-color: orangered;
-  }
-  
-  .hamburger-container-item {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    margin: 0;
-  }
-  
-  .hamburger-container-item a {
-    text-decoration: none;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .nav-link {
-      display: none;
-    }
-  
-    .hamburger-button {
-      display: block;
-    }
-  
-    nav ul {
-      justify-content: space-between;
-    }
-  
-    nav ul li:last-child {
-      width: auto;
-    }
-  }
+.navbar ul {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  align-items: center;
+}
+.me-auto{
+margin-left: 1rem !important;
+}
+.btn-link {
+text-decoration: none !important;
+color: black !important;
+}
