@@ -30,10 +30,10 @@ resave: false,
 saveUninitialized: true,
 cookie: {
   secure : false,
-  maxAge : 1000 * 60 * 60 * 24 // 1 hari
-}
-}))
-app.use(flash())
+  maxAge : 1000 * 60 * 60 * 24,
+},
+}));
+app.use(flash());
 // routing
 app.get("/", home);
 app.get("/contact", contact);
@@ -41,9 +41,9 @@ app.get("/testimonial", testimonial);
 
 
 // LOGIN
-app.get("/login", login)
-app.post("/login", loginPost)
-app.post("/logout", logoutPost)
+app.get("/login", login);
+app.post("/login", loginPost);
+app.post("/logout", logoutPost);
 // REGISTER
 app.get("/register", register);
 app.post("/register", registerPost);
