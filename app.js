@@ -61,7 +61,7 @@ async function home(req, res) {
   const user = req.session.user;
 
 
-  const query = `SELECT projects.*, users.name AS author FROM projects INNER JOIN users ON projects.author_id = users.id`;
+  const query = `SELECT projects.*, users.name AS author FROM projects LEFT JOIN users ON projects.author_id = users.id`;
   const projects = await sequelize.query(query, { type: QueryTypes.SELECT });
 
 
