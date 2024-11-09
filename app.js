@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const path = require("path");
 require("./src/libs/hbs-helper");
-const config = require("./config/config");
+const config = require("./config/config.js");
 const {Sequelize, QueryTypes} = require("sequelize");
 
 const bcrypt = require ("bcrypt");
@@ -23,16 +23,26 @@ app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//-momery unleaked---------
+app.set('trust proxy', 1);
+
 app.use(session({
-name: "my-session",
-secret: "sangatrahasia",
-resave: false,
+cookie:{
+    secure: true,
+    maxAge:60000
+       },
+store: new RedisStore(),
+secret: 'secret',
 saveUninitialized: true,
-cookie: {
-  secure : false,
-  maxAge : 1000 * 60 * 60 * 24,
-},
+resave: false
 }));
+
+app.use(function(req,res,next){
+if(!req.session){
+    return next(new Error('Oh no')) //handle error
+}
+next() //otherwise continue
+});
 app.use(flash());
 // routing
 app.get("/", home);
