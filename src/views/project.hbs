@@ -64,7 +64,7 @@
           {{#if user}}
     <div class="container">
     
-        <!-- Form Section -->
+       
         <section class="form-section">
             <h1>ADD MY PROJECT</h1>
             <form method="post" action="/project"  enctype="multipart/form-data">
@@ -104,7 +104,7 @@
             </form>
         </section>
         {{/if}}
-              <!-- Projects Display Section -->
+      
       <section class="projects-section">
   <h1>MY PROJECTS</h1>
   <div id="projectsContainer" class="projects-container">
@@ -118,21 +118,21 @@
           <a href="/project-detail/{{id}}" target="_blank" class="h2">{{project_name}}</a>
         </h2>
 
-        <!-- Date and Duration -->
+    
         <p><strong>Start Date:</strong> {{get_full_time start_date}}</p>
         <p><strong>End Date:</strong> {{get_full_time end_date}}</p>
         <p><strong>Duration:</strong> {{get_duration start_date end_date}}</p>
 
-        <!-- Time since created -->
+       
         <p><strong>Posted:</strong> {{get_distance_time createdAt}}</p>
 
-        <!-- Technologies -->
+       
         <p><strong>Technologies:</strong> {{technologies}}</p>
 
-        <!-- Author Information -->
-        <p><strong>Author:</strong> {{author}}</p> <!-- assuming 'author' has a 'name' field -->
+     
+        <p><strong>Author:</strong> {{author}}</p>
 
-        <!-- Action Buttons -->
+    
         {{#if ../user}}
         <div class="btn-group">
           <a class="btn btn-primary" href="/edit-project/{{id}}" role="button">Edit Post</a>

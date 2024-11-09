@@ -34,7 +34,7 @@
         </li>
       </ul>
 
-     <!-- Menambahkan tombol Login, Register, dan Contact di kanan -->
+     
       <div class="navbar-nav ms-auto">
         {{#if user}}
           <div class="navbar-user">
@@ -63,9 +63,10 @@
           </div>
             
            <div class="project-time">
-          <p><strong>Start Date:</strong> {{get_full_time project.start_date}}</p>
-        <p><strong>End Date:</strong> {{get_full_time project.end_date}}</p>
-        <p><strong>Duration:</strong> {{get_duration project.start_date project.end_date}}</p>
+           <i class="fa-solid fa-calendar-days"></i> <strong>Duration:</strong>
+           <p>{{get_full_time project.start_date}} - {{get_full_time project.end_date}}</p>
+       
+        <i class="fa-solid fa-clock"></i> {{get_duration project.start_date project.end_date}}</p>
 
 <br>
             <h4>Technologies</h4>
