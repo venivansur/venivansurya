@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const path = require("path");
 require("./src/libs/hbs-helper");
-const config = require("./config/config.js");
+const config = require("./config/config");
 const {Sequelize, QueryTypes} = require("sequelize");
 
 const bcrypt = require ("bcrypt");
@@ -30,7 +30,7 @@ resave: false,
 saveUninitialized: true,
 cookie: {
   secure : false,
-  maxAge : 1000 * 60 * 60 * 24,
+  maxAge : 1000 * 60 * 60 * 24, 
 },
 }));
 app.use(flash());
