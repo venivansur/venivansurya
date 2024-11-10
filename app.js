@@ -12,7 +12,7 @@ const flash = require("express-flash");
 const upload = require("./src/middlewares/upload-file");
 
 require("dotenv").config()
-  const environment = process.env.NODE_ENV
+  const environment = process.env.NODE_ENV || "development"
 
 const sequelize = new Sequelize(config[environment]);
 
@@ -23,16 +23,15 @@ app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(expressSession({
-  store: new session({
-    pool : pgPool,                // Connection pool
-    tableName : 'user_sessions'   // Use another table-name than the default "session" one
-    // Insert connect-pg-simple options here
-  }),
-  secret: process.env.FOO_COOKIE_SECRET,
-  resave: false,
-  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
-  // Insert express-session options here
+app.use(session({
+name: "my-session",
+secret: "sangatrahasia",
+resave: false,
+saveUninitialized: true,
+cookie: {
+  secure : false,
+  maxAge : 1000 * 60 * 60 * 24, 
+},
 }));
 app.use(flash());
 // routing
