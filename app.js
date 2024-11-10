@@ -10,15 +10,8 @@ const bcrypt = require ("bcrypt");
 const session = require("express-session");
 const flash = require("express-flash");
 const upload = require("./src/middlewares/upload-file");
-const pgSession = require('connect-pg-simple')(session);
-const { Pool } = require('pg');
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'b58personalweb',
-  password: '1234',
-  port: 5432,
-});
+
+
 
 
 require("dotenv").config()
@@ -34,15 +27,15 @@ app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
-  store: new pgSession({
-    pool: pool,  // Menggunakan pool koneksi PostgreSQL
-    tableName: 'session'  // Nama tabel untuk menyimpan sesi
-  }),
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: false
+name: "my-session",
+secret: "sangatrahasia",
+resave: false,
+saveUninitialized: true,
+cookie: {
+  secure : false,
+  maxAge : 1000 * 60 * 60 * 24, 
+},
 }));
-
 app.use(flash());
 // routing
 app.get("/", home);
