@@ -59,15 +59,13 @@ app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
-name: "my-session",
-secret: "sangatrahasia",
-resave: false,
-saveUninitialized: true,
-cookie: {
-  secure : false,
-  maxAge : 1000 * 60 * 60 * 24, 
-},
-}));
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  resave: false,
+  secret: 'keyboard cat'
+}))
 app.use(flash());
 // routing
 app.get("/", home);
