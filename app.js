@@ -7,15 +7,31 @@ const config = require("./config/config");
 const {Sequelize, QueryTypes} = require("sequelize");
 
 const bcrypt = require ("bcrypt");
-const session = require('cookie-session');
+const session = require("express-session");
 const flash = require("express-flash");
 const upload = require("./src/middlewares/upload-file");
-
+const pg = require("pg");
 require("dotenv").config()
-  const environment = process.env.NODE_ENV
+const environment = process.env.NODE_ENV || 'development';
 
-const sequelize = new Sequelize(config[environment]);
 
+const sequelize = new Sequelize(config[environment].database, config[environment].username, config[environment].password, {
+  host: config[environment].host,
+  dialect: config[environment].dialect,
+  dialectModule: pg,
+  dialectOptions: {
+      ssl: false // Menonaktifkan SSL
+  },
+});
+
+// Cek koneksi
+sequelize.authenticate()
+  .then(() => {
+      console.log('Koneksi ke database berhasil.');
+  })
+  .catch(err => {
+      console.error('Tidak dapat terhubung ke database:', err);
+  });
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "./src/views"))
 app.use("/assets", express.static(path.join(__dirname, "./src/assets")));
