@@ -14,10 +14,45 @@ const upload = require("./src/middlewares/upload-file");
 
 
 
-require("dotenv").config()
-  const environment = process.env.NODE_ENV || "development"
+require("dotenv").config(); // Memuat variabel dari .env file
 
-const sequelize = new Sequelize(config[environment]);
+
+const pg = require("pg");  // Memastikan pg module digunakan untuk PostgreSQL
+
+// Mengimpor file konfigurasi (pastikan path yang benar)
+
+
+// Menentukan environment (development atau production)
+const environment = process.env.NODE_ENV || "development";
+
+// Mengambil konfigurasi untuk environment yang sesuai
+const dbConfig = config[environment];
+
+// Membuat instance Sequelize dengan konfigurasi yang tepat
+const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
+  host: dbConfig.host,
+  dialect: dbConfig.dialect,  // Pastikan dialect diatur ke 'postgres'
+  dialectModule: pg,  // Gunakan module pg untuk PostgreSQL
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+  logging: false,  // Nonaktifkan log jika Anda tidak ingin melihat log query
+});
+
+// Menguji koneksi ke database
+sequelize.authenticate()
+  .then(() => {
+    console.log("Connection has been established successfully.");
+  })
+  .catch((err) => {
+    console.error("Unable to connect to the database:", err);
+  });
+
+module.exports = sequelize;  // Ekspor sequelize instance jika diperlukan di file lain
+
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "./src/views"))
