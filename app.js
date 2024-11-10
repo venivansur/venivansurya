@@ -4,28 +4,17 @@ const port = 3000;
 const path = require("path");
 require("./src/libs/hbs-helper");
 const config = require("./config/config");
-const { Sequelize, QueryTypes } = require("sequelize"); // Import Sequelize dan QueryTypes
+const {Sequelize, QueryTypes} = require("sequelize");
 
 const bcrypt = require ("bcrypt");
-const session = require("express-session");
+const session = require('cookie-session');
 const flash = require("express-flash");
 const upload = require("./src/middlewares/upload-file");
 
 require("dotenv").config()
   const environment = process.env.NODE_ENV
 
-  
-
-  const sequelize = new Sequelize(config[process.env.NODE_ENV || 'development']);
-  
-  sequelize.authenticate()
-    .then(() => {
-      console.log('Koneksi ke database PostgreSQL berhasil!');
-    })
-    .catch(err => {
-      console.error('Gagal terhubung ke database:', err);
-    });
-  
+const sequelize = new Sequelize(config[environment]);
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "./src/views"))
