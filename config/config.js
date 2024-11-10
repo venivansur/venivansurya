@@ -1,5 +1,4 @@
-require('dotenv').config();
-const pg = require('pg');
+require("dotenv").config();
 
 module.exports = {
   development: {
@@ -8,13 +7,8 @@ module.exports = {
     database: process.env.POSTGRES_DATABASE,
     host: process.env.POSTGRES_HOST,
     dialect: 'postgres',
-    dialectModule: pg,  // Menggunakan pg sebagai module PostgreSQL
-    dialectOptions: process.env.NODE_ENV === 'production' ? {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // Hanya aktifkan SSL di produksi
-      },
-    } : undefined,  // Jangan aktifkan SSL di development
+    dialectModule: require('pg'),
+    port: process.env.POSTGRES_PORT || 5432, // Gunakan 5432 atau port yang sesuai
   },
   production: {
     username: process.env.POSTGRES_USER,
@@ -22,12 +16,7 @@ module.exports = {
     database: process.env.POSTGRES_DATABASE,
     host: process.env.POSTGRES_HOST,
     dialect: 'postgres',
-    dialectModule: pg,  // Menggunakan pg sebagai module PostgreSQL
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,  // SSL diaktifkan di produksi
-      },
-    },
+    dialectModule: require('pg'),
+    port: process.env.POSTGRES_PORT || 5432, // Gunakan port yang sesuai
   },
 };

@@ -4,7 +4,7 @@ const port = 3000;
 const path = require("path");
 require("./src/libs/hbs-helper");
 const config = require("./config/config");
-const {Sequelize, QueryTypes} = require("sequelize");
+const { Sequelize, QueryTypes } = require("sequelize"); // Import Sequelize dan QueryTypes
 
 const bcrypt = require ("bcrypt");
 const session = require("express-session");
