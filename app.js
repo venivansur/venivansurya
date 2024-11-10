@@ -13,18 +13,11 @@ const upload = require("./src/middlewares/upload-file");
 
 require("dotenv").config()
   const environment = process.env.NODE_ENV
-
-  const { Sequelize } = require('sequelize');
-  const config = require('./config/config');
-  const sequelize = new Sequelize(config[process.env.NODE_ENV || 'development']);
+  const { Sequelize, QueryTypes } = require("sequelize"); // Pastikan QueryTypes diimpor
+  require("dotenv").config();
+  const config = require("./config/config");
   
-  sequelize.authenticate()
-    .then(() => {
-      console.log('Koneksi ke database PostgreSQL berhasil!');
-    })
-    .catch(err => {
-      console.error('Gagal terhubung ke database:', err);
-    });
+  const sequelize = new Sequelize(config[process.env.NODE_ENV || 'development']);
   
 
 app.set("view engine", "hbs");
