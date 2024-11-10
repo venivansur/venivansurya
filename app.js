@@ -15,7 +15,7 @@ const upload = require("./src/middlewares/upload-file");
 
 
 require("dotenv").config()
-  const environment = process.env.NODE_ENV 
+  const environment = process.env.NODE_ENV || "development"
 
 const sequelize = new Sequelize(config[environment]);
 
