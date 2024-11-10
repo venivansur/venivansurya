@@ -3,8 +3,8 @@ const app = express();
 const port = 3000;
 const path = require("path");
 require("./src/libs/hbs-helper");
-const config = require("./config/config");
-const {Sequelize, QueryTypes} = require("sequelize");
+
+
 
 const bcrypt = require ("bcrypt");
 const session = require("express-session");
@@ -14,7 +14,18 @@ const upload = require("./src/middlewares/upload-file");
 require("dotenv").config()
   const environment = process.env.NODE_ENV
 
-const sequelize = new Sequelize(config[environment]);
+  const { Sequelize } = require('sequelize');
+  const config = require('./config/config');
+  const sequelize = new Sequelize(config[process.env.NODE_ENV || 'development']);
+  
+  sequelize.authenticate()
+    .then(() => {
+      console.log('Koneksi ke database PostgreSQL berhasil!');
+    })
+    .catch(err => {
+      console.error('Gagal terhubung ke database:', err);
+    });
+  
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "./src/views"))
@@ -152,7 +163,7 @@ async function registerPost(req,res) {
 }
 
 async function project(req, res) {
-  const query = `SELECT projects.*, users.name AS author FROM projects INNER JOIN users ON projects.author_id = users.id`;
+  const query = `SELECT projects.*, users.name AS author FROM projects LEFT JOIN users ON projects.author_id = users.id`;
   let projects = await sequelize.query(query,{type : QueryTypes.SELECT})
 
 const user = req.session.user
