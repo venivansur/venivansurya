@@ -25,19 +25,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'your_secret_key',  // Ganti dengan secret key Anda
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     secure: false,  // Set true jika menggunakan HTTPS (di produksi)
-    httpOnly: true,
+    
     maxAge: 1000 * 60 * 60 * 24 // 1 hari
   }
 }));
 
 
-
-
-
 app.use(flash());
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;
+  next();
+});
+
+
+
 // routing
 app.get("/", home);
 app.get("/contact", contact);
@@ -80,7 +84,7 @@ async function projectDetail(req, res) {
   const query = `SELECT * FROM projects WHERE id = ${id}`;
   const project = await sequelize.query(query, { type: QueryTypes.SELECT });
 
-  console.log('Project Image Path:', project[0].image); // Log image path yang disimpan
+  console.log('Project Image Path:', project[0].image); 
 
   project[0].author = "Veni Vansurya";
   res.render("project-detail", { project: project[0] });
