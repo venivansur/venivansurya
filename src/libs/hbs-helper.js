@@ -64,3 +64,12 @@ hbs.registerHelper("get_duration", (start, end) => {
 
   return `${months} month(s) and ${days} day(s)`; 
 });
+
+
+
+hbs.registerHelper('contains', function(array, value) {
+  if (Array.isArray(array)) {
+    return array.includes(value);
+  }
+  return false;  // Kembalikan false jika bukan array
+});

@@ -58,7 +58,7 @@
           <h1>{{project.project_name}}</h1>
         <div class="project-detail-container">
           <div class= "project-image">
-<img src="/{{project.image}}" alt="Project Image" class="project-image" style="width: 100%;"/>
+<img src="/uploads/{{project.image}}" alt="Project Image" class="project-image" style="width: 100%;"/>
 
           </div>
             
@@ -69,8 +69,26 @@
         <i class="fa-solid fa-clock"></i> {{get_duration project.start_date project.end_date}}</p>
 
 <br>
-            <h4>Technologies</h4>
-            <h5>{{project.technologies}}</h5>
+           
+ <p><strong>Technologies:</strong> 
+
+  <p>{{#if (contains project.technologies "Node Js")}}
+    <span class="tech-item"><i class="fab fa-node icon-large"></i> Node js</span>
+  {{/if}}
+ 
+  {{#if (contains prooject.technologies "Next Js")}}
+    <span class="tech-item"><i class="fab fa-react icon-large"></i> Next js</span>
+  {{/if}}
+  
+  {{#if (contains project.technologies "React Js")}}
+     <span class="tech-item"><i class="fab fa-react icon-large"></i> React js</span>
+  {{/if}}
+  
+  {{#if (contains project.technologies "TypeScript")}}
+    <span class="tech-item"><i class="fab fa-js-square icon-large"></i> TypeScript</span>
+  {{/if}}
+</p>
+
             </div> 
 
           

@@ -22,12 +22,7 @@ function sendToMail(event) {
      return alert ("Messege tidak boleh kosong!");}
 
 
-     console.log(inputName)
-     console.log(inputEmail)
-     console.log(inputPhone)
-     console.log(inputSubject) 
-     console.log(inputMessege)
-                
+   
      const a = document.createElement("a");
      a.href = `mailto:${inputEmail}?subject=${inputSubject}&body=${inputMessege}`;
      a.click()
