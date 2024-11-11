@@ -11,7 +11,7 @@ const flash = require("express-flash");
 const upload = require("./src/middlewares/upload-file");
 
 require("dotenv").config()
-const environment = process.env.NODE_ENV
+const environment = process.env.NODE_ENV||"development"
 const sequelize = new Sequelize(config[environment]);
 
 app.set("view engine", "hbs");
@@ -42,10 +42,8 @@ app.get("/testimonial", testimonial);
 app.get("/login", login);
 app.post("/login", loginPost);
 app.post("/logout", logoutPost);
-// REGISTER
 app.get("/register", register);
 app.post("/register", registerPost);
-// BLOG
 app.get("/project", project);
 app.post("/project", upload.single("image"), projectPost);
 app.post("/delete-project/:id", projectDelete);

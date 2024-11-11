@@ -1,35 +1,29 @@
-
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
+  max-width: 600px;
+
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
 .judul {
   font-size: 28px;
   color: #333;
-  margin-bottom: 20px;
 }
-
 
 .form-container {
-  padding: 20px;
+  padding: 10px;
 }
 
-
-.contact-form .form-group {
-  margin-bottom: 15px;
+.mb-5 {
+  margin-bottom: 1rem !important;
 }
 
 .contact-form label {
@@ -37,8 +31,8 @@ body {
   color: #333;
 }
 
-.contact-form input, 
-.contact-form select, 
+.contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   padding: 10px;
@@ -47,7 +41,6 @@ body {
   border: 1px solid #ccc;
   font-size: 14px;
 }
-
 
 .contact-form button {
   background-color: #100f0f;
@@ -64,25 +57,13 @@ body {
   background-color: #121010;
 }
 
-
 @media (max-width: 768px) {
   .container {
-    max-width: 100%; 
+    max-width: 100%;
     padding: 15px;
   }
 
   .contact-form button {
-    width: 100%; 
+    width: 100%;
   }
 }
-
-  
-
-
-
-
-
-
-
-
-

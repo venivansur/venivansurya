@@ -17,12 +17,12 @@
   <div class="container-fluid">
     <img src="/assets/img/logo.png" alt="Logo" class="navbar-logo" style="height: 30px;" />
 
-    <!-- Tombol Hamburger (Navbar Toggler) -->
+   
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Daftar Menu yang Dapat Collapse -->
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
@@ -36,7 +36,6 @@
         </li>
       </ul>
 
-      <!-- Menambahkan tombol Login, Register, dan Contact di kanan -->
       <div class="navbar-nav ms-auto">
         {{#if user}}
           <div class="navbar-user">
@@ -80,7 +79,7 @@
           
                     <a href="/contact"  class="btn btn-outline-dark active contact-btn">Contact Me</a>
         
-                    <a href="assets/img/cv veni vansurya - 1728640129.pdf" class="download-cv">downloadCV</a>
+                    <a href="" class="download-cv">downloadCV</a>
         
                   
                     <img src="assets/img/download.png" alt="symbol-download" width="20" height="20">
@@ -121,7 +120,7 @@
           </div>
   
      </div>
-              <!-- Projects Display Section -->
+              
       <section class="projects-section">
   <h1>MY PROJECTS</h1>
   <div id="projectsContainer" class="projects-container">
@@ -135,21 +134,21 @@
           <a href="/project-detail/{{id}}" target="_blank" class="h2">{{project_name}}</a>
         </h2>
 
-        <!-- Date and Duration -->
+        
         <p><strong>Start Date:</strong> {{get_full_time start_date}}</p>
         <p><strong>End Date:</strong> {{get_full_time end_date}}</p>
         <p><strong>Duration:</strong> {{get_duration start_date end_date}}</p>
 
-        <!-- Time since created -->
+     
         <p><strong>Posted:</strong> {{get_distance_time createdAt}}</p>
 
-        <!-- Technologies -->
+        
         <p><strong>Technologies:</strong> {{technologies}}</p>
 
-        <!-- Author Information -->
-        <p><strong>Author:</strong> {{author}}</p> <!-- assuming 'author' has a 'name' field -->
+       
+        <p><strong>Author:</strong> {{author}}</p> 
 
-        <!-- Action Buttons -->
+
         {{#if ../user}}
         <div class="btn-group">
           <a class="btn btn-primary" href="/edit-project/{{id}}" role="button">Edit Post</a>
@@ -163,7 +162,7 @@
     {{/each}}
   </div>
 </section>
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
      
       

@@ -50,7 +50,7 @@ async function fetchAndDisplayTestimonials() {
     
   } catch (error) {
     console.error('Error fetching testimonials:', error);
-    testimonialContainer.innerHTML = '<p>Maaf, terjadi kesalahan saat memuat testimonial.</p>';
+    testimonialContainer.innerHTML = ' terjadi kesalahan saat memuat testimonial ';
   }
 }
 
@@ -73,7 +73,7 @@ async function filterTestimonialsByRating(ratingFilter) {
 
   } catch (error) {
     console.error('Error fetching testimonials:', error);
-    testimonialContainer.innerHTML = '<p>Maaf, terjadi kesalahan saat memuat testimonial.</p>';
+    testimonialContainer.innerHTML = ' terjadi kesalahan saat memuat testimonial ';
   }
 }
 
