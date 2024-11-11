@@ -21,16 +21,22 @@ app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(session({
-name: "my-session",
-secret: "sangatrahasia",
-resave: false,
-saveUninitialized: true,
-cookie: {
-  secure : false,
-  maxAge : 1000 * 60 * 60 * 24, 
-},
+  secret: 'your_secret_key',  // Ganti dengan secret key Anda
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false,  // Set true jika menggunakan HTTPS (di produksi)
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 // 1 hari
+  }
 }));
+
+
+
+
+
 app.use(flash());
 // routing
 app.get("/", home);
